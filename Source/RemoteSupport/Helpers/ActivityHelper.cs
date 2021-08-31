@@ -152,7 +152,7 @@ namespace Microsoft.Teams.Apps.RemoteSupport.Helpers
                 case ChangeTicketStatus.CloseAction:
                     ticketData.TicketStatus = (int)TicketState.Closed;
                     ticketData.ClosedByName = message.From.Name;
-                    ticketData.ClosedOn = message.From.AadObjectId;
+                    ticketData.ClosedOn = DateTime.UtcNow;
                     smeNotification = localizer.GetString("SmeClosedStatus", message.From.Name);
                     userNotification = MessageFactory.Text(localizer.GetString("ClosedTicketUserNotification", ticketData.TicketId));
                     break;
