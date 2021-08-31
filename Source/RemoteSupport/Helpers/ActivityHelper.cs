@@ -143,6 +143,7 @@ namespace Microsoft.Teams.Apps.RemoteSupport.Helpers
                 case ChangeTicketStatus.ReopenAction:
                     ticketData.TicketStatus = (int)TicketState.Unassigned;
                     ticketData.AssignedToName = null;
+                    ticketData.AssignedOn = null;
                     ticketData.AssignedToObjectId = null;
                     ticketData.ClosedOn = null;
                     smeNotification = localizer.GetString("SmeUnassignedStatus", message.From.Name);
